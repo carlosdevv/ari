@@ -1,0 +1,35 @@
+### Create a new event
+POST http://localhost:3333/events
+Content-Type: application/json
+
+{
+  "title": "New Event",
+  "details": "details",
+  "maximumAttendees": 100
+}
+
+### Create a new attendee
+
+POST http://localhost:3333/events/7fce474c-7b97-4996-aa65-46964c339d37/attendees
+Content-Type: application/json
+
+{
+  "name": "Tiko",
+  "email": "tiko@email.com"
+}
+
+### Get event props
+
+GET http://localhost:3333/events/7fce474c-7b97-4996-aa65-46964c339d37
+
+### Get attendee props
+
+GET http://localhost:3333/attendees/1/badge
+
+### Check-in attendee
+
+GET http://localhost:3333/attendees/1/check-in
+
+### Get attendees of an event with query params
+
+GET http://localhost:3333/events/7fce474c-7b97-4996-aa65-46964c339d37/attendees?query=tiko
